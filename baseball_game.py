@@ -312,11 +312,59 @@ def main():
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
     # 위의 코드를 포함하여 자유로운 수정이 가능함
+    while 1:
+        user_input = input()
+        if is_validated_number(user_input):
+            break
+        else:
+            print("Wrong Input, Input again")
+    
+    while 1:
+        result = get_strikes_or_ball(user_input, random_number)
+        print("Strikes : {} , Balls : {}".format(result[0],result[1]))
+        if result[0]==3:
+            print("You win, one more(Y/N)?")
+            one_more_input = input()
+            if is_yes(one_more_input):
 
+                random_number = str(get_not_duplicated_three_digit_number())
+                print("Random Number is : ", random_number)
+                while 1:
+                    user_input = input()
+                    if is_validated_number(user_input):
+                        break
+                    else:
+                        print("Wrong Input, Input again")
+                    
+            elif is_no(one_more_input):
+                break
+            else :
+                while 1:
+                    print("Wrong Input, Input again")
+                    one_more_input = input()
+                    if is_yes(one_more_input):
+                        break
+                    elif is_no(one_more_input):
+                        break
+                    else:
+                        continue
+        else:
+            while 1:
+                user_input = input()
+                if is_validated_number(user_input):
+                    break
+                else:
+                    print("Wrong Input, Input again")
+            
+                
+            
 
+        
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")
+
+
 
 if __name__ == "__main__":
     main()
