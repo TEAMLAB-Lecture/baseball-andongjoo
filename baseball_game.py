@@ -343,6 +343,14 @@ def main():
                     print("Wrong Input, Input again")
                     one_more_input = input()
                     if is_yes(one_more_input):
+                        random_number = str(get_not_duplicated_three_digit_number())
+                        print("Random Number is : ", random_number)
+                        while 1:
+                            user_input = input()
+                            if is_validated_number(user_input):
+                                break
+                            else:
+                                print("Wrong Input, Input again")
                         break
                     elif is_no(one_more_input):
                         break
@@ -363,8 +371,6 @@ def main():
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")
-
-
 
 if __name__ == "__main__":
     main()
