@@ -306,6 +306,7 @@ def is_no(one_more_input):
 
 
 
+
 def main():
     print("Play Baseball")
     user_input = 999
@@ -330,8 +331,7 @@ def main():
         result = get_strikes_or_ball(user_input, random_number)
         print("Strikes : {} , Balls : {}".format(result[0],result[1]))
         if result[0]==3:
-            print("You win, one more(Y/N)?")
-            one_more_input = input()
+            one_more_input = input("You win, one more(Y/N)?")
             if is_yes(one_more_input):
 
                 random_number = str(get_not_duplicated_three_digit_number())
@@ -353,7 +353,7 @@ def main():
             else :
                 while 1:
                     print("Wrong Input, Input again")
-                    one_more_input = input()
+                    one_more_input = input("You win, one more(Y/N)?")
                     if is_yes(one_more_input):
                         random_number = str(get_not_duplicated_three_digit_number())
                         print("Random Number is : ", random_number)
@@ -387,7 +387,6 @@ def main():
     # ==================================
     print("Thank you for using this program")
     print("End of the Game")
-
 
 if __name__ == "__main__":
     main()
